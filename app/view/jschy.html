@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="public/css/default.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="add()">增加cookie</button>
+        <button onclick="del()">删除cookie</button>
+        <button onclick="editor()">修改cookie</button>
+        <button onclick="show()">查看cookie</button>
+    </div>
+
+    
+    {{username}}
+    <h2>现在由<%= id%> 号技师为你服务</h2>
+    <h3>你好我是{{name}},{{age}}</h3>
+    <ul>
+        {% for item in skills %}
+            <li>{{item}}</li>
+        {% endfor %}
+        <li></li>
+    </ul>
+    <script>
+        function add(){
+            fetch("/add",{
+                method:"post",
+                headers:{
+                    "Content-type":"application/json"
+                }
+            })
+        }
+        function del(){
+            fetch("/del",{
+                method:"post",
+                headers:{
+                    "Content-type":"application/json"
+                }
+            })
+        }
+        function editor(){
+            fetch("/editor",{
+                method:"post",
+                headers:{
+                    "Content-type":"application/json"
+                }
+            })
+        }
+        function show(){
+            fetch("/show",{
+                method:"post",
+                headers:{
+                    "Content-type":"application/json"
+                }
+            })
+        }
+    </script>
+</body>
+</html>
